@@ -1,6 +1,6 @@
 #Yo'Edmonton - Live Edmonton Hip Hop
 
-A live tracking system for finding live Edmonton show.
+A live tracking system for finding live Edmonton hip hop shows.
 
 David Bergeron 2019
 
