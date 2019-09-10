@@ -1,14 +1,14 @@
 import Header from "./Header";
 import Head from 'next/head';
 
-const Layout = ({title}) => {
+const Layout = ({title, children}) => {
   return (
     <div className="page-layout">
       <Head>
         <title>{title}</title>
       </Head>
       {/* <Header /> */}
-      <main>{props.children}</main>
+      <main>{children}</main>
       <style jsx global>
         {`
           /* RESET */
