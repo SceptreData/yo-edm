@@ -56,13 +56,13 @@ const Index = ({ events }) => {
 
       <ul className='upcoming-shows'></ul>
 
-      <section>
+      {/* <section>
         <ul>
           {events.map(event => (
             <EventItem key={event.id} src={event} />
           ))}
-        </ul>
-      </section>
+        </ul> */}
+      {/* </section> */}
       <section>
         <h2>Featured</h2>
         <p>
@@ -164,11 +164,12 @@ function genreSearch(genre) {
   return `&classificationId=${genre}&${EDMONTON_QUERY}`;
 }
 
-Index.getInitialProps = async ({ req }) => {
-  const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
-  const json = await res.json();
-  console.log(process.env.TMASTER_API_KEY);
-  return { events: json._embedded.events };
-};
+// Index.getInitialProps = async ({ req }) => {
+//   const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
+//   console.log(res);
+//   const json = await res.json();
+//   console.log(json);
+//   return { events: json._embedded.events };
+// };
 
 export default Index;
