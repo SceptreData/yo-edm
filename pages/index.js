@@ -55,7 +55,7 @@ const EventItem = ({ src }) => {
 const Index = ({ events }) => {
   console.log(events);
   return (
-    <Layout>
+    <Layout title="Yo'Edmonton - The home of Live Edmonton Hip Hop.">
       <h1>Yo'Edmonton</h1>
       <p>Live Edmonton Hip Hop</p>
 

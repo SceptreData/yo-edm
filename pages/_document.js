@@ -20,6 +20,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,500&display=swap'
             rel='stylesheet'
           />
+          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
         </Head>
         <body>
           <Main />
