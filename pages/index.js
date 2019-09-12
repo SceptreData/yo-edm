@@ -4,56 +4,51 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
 function unpackEvent(event) {
-  if (event !== undefined) {
-    console.log(event);
-    const { name, dates, images, url } = event;
-    const { genre, subgenre } = event.classifications[0];
-    const venue = event._embedded.venues[0];
+  // if (event !== undefined) {
+  const { name, dates, images, url } = event;
+  const { genre, subgenre } = event.classifications[0];
+  const venue = event._embedded.venues[0];
 
-    return { name, dates, images, url, genre, subgenre, venue };
-  }
-  return null;
+  return { name, dates, images, url, genre, subgenre, venue };
+  // }
+  // return null;
 }
 
 const EventItem = ({ src }) => {
   const event = unpackEvent(src);
-  if (event) {
-    return (
-      <li>
-        <h3>{event.name}</h3>
-        <h4>{event.subgenre}</h4>
-        <time className='event-time'>{event.dates.start.localTime}</time>
-        <time className='event-date'>{event.dates.start.localDate}</time>
-        <a href={event.url}>
-          {event.venue.name}
-          <span>→</span>
-        </a>
-        <style jsx>{`
-          time {
-            display: block;
-          }
-          a,
-          a:visited {
-            color: gold;
-            text-decoration: none;
-          }
+  return (
+    <li>
+      <h3>{event.name}</h3>
+      <h4>{event.subgenre}</h4>
+      <time className='event-time'>{event.dates.start.localTime}</time>
+      <time className='event-date'>{event.dates.start.localDate}</time>
+      <a href={event.url}>
+        {event.venue.name}
+        <span>→</span>
+      </a>
+      <style jsx>{`
+        time {
+          display: block;
+        }
+        a,
+        a:visited {
+          color: gold;
+          text-decoration: none;
+        }
 
-          span {
-            font-size: 2rem;
-          }
+        span {
+          font-size: 2rem;
+        }
 
-          a:hover {
-            color: goldenrod;
-          }
-        `}</style>
-      </li>
-    );
-  }
-  return null;
+        a:hover {
+          color: goldenrod;
+        }
+      `}</style>
+    </li>
+  );
 };
 
 const Index = ({ events }) => {
-  console.log(events);
   return (
     <Layout title="Yo'Edmonton - The home of Live Edmonton Hip Hop.">
       <h1>Yo'Edmonton</h1>
@@ -172,6 +167,7 @@ function genreSearch(genre) {
 Index.getInitialProps = async ({ req }) => {
   const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
   const json = await res.json();
+  console.log(process.env.TMASTER_API_KEY);
   return { events: json._embedded.events };
 };
 
