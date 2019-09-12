@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "TMASTER_API_KEY": "tmaster_api"
+      "TMASTER_API_KEY": "@tmaster_api"
     }
   },
   "env": {
