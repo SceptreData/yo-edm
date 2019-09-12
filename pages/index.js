@@ -1,5 +1,6 @@
 import Layout from '../components/Layout.js';
 import Link from 'next/link';
+import {useState, useEffect} from 'react'
 
 import fetch from 'isomorphic-unfetch';
 
@@ -164,12 +165,15 @@ function genreSearch(genre) {
   return `&classificationId=${genre}&${EDMONTON_QUERY}`;
 }
 
-// Index.getInitialProps = async ({ req }) => {
-//   const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
-//   console.log(res);
-//   const json = await res.json();
-//   console.log(json);
-//   return { events: json._embedded.events };
-// };
+Index.getInitialProps = async ({ req }) => {
+  if (req){
+    const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
+    const json = await res.json();
+    return { events: json._embedded.events };
+  } else {
+    const res = fetch(API_STR + genreSearch(HIPHOP_GENRE_ID)).then( events => set
+    return {}
+  }
+};
 
 export default Index;
