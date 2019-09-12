@@ -1,7 +1,59 @@
 import Layout from '../components/Layout.js';
 import Link from 'next/link';
 
-export default function Index() {
+import fetch from 'isomorphic-unfetch';
+
+function unpackEvent(event) {
+  if (event !== undefined) {
+    console.log(event);
+    const { name, dates, images, url } = event;
+    const { genre, subgenre } = event.classifications[0];
+    const venue = event._embedded.venues[0];
+
+    return { name, dates, images, url, genre, subgenre, venue };
+  }
+  return null;
+}
+
+const EventItem = ({ src }) => {
+  const event = unpackEvent(src);
+  if (event) {
+    return (
+      <li>
+        <h3>{event.name}</h3>
+        <h4>{event.subgenre}</h4>
+        <time className='event-time'>{event.dates.start.localTime}</time>
+        <time className='event-date'>{event.dates.start.localDate}</time>
+        <a href={event.url}>
+          {event.venue.name}
+          <span>→</span>
+        </a>
+        <style jsx>{`
+          time {
+            display: block;
+          }
+          a,
+          a:visited {
+            color: gold;
+            text-decoration: none;
+          }
+
+          span {
+            font-size: 2rem;
+          }
+
+          a:hover {
+            color: goldenrod;
+          }
+        `}</style>
+      </li>
+    );
+  }
+  return null;
+};
+
+const Index = ({ events }) => {
+  console.log(events);
   return (
     <Layout>
       <h1>Yo'Edmonton</h1>
@@ -9,6 +61,13 @@ export default function Index() {
 
       <ul className='upcoming-shows'></ul>
 
+      <section>
+        <ul>
+          {events.map(event => (
+            <EventItem key={event.id} src={event} />
+          ))}
+        </ul>
+      </section>
       <section>
         <h2>Featured</h2>
         <p>
@@ -94,4 +153,26 @@ export default function Index() {
       `}</style>
     </Layout>
   );
+};
+
+const API_STR = `https://app.ticketmaster.com/discovery/v2/events?apikey=${process.env.TMASTER_API_KEY}`;
+
+const HIPHOP_GENRE_ID = 'KnvZfZ7vAv1';
+const EDMONTON_QUERY = 'locale=*&city=Edmonton&countryCode=CA';
+
+function keywordSearch(keyword) {
+  const cleanKeyWord = encodeURIComponent(keyword);
+  return `&keyword=${cleanKeyWord}&${EDMONTON_QUERY}`;
 }
+
+function genreSearch(genre) {
+  return `&classificationId=${genre}&${EDMONTON_QUERY}`;
+}
+
+Index.getInitialProps = async ({ req }) => {
+  const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
+  const json = await res.json();
+  return { events: json._embedded.events };
+};
+
+export default Index;
