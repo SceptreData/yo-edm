@@ -13,15 +13,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <meta name='keywords' content='Live,Edmonton,Hip Hop' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <link
-            href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,500&display=swap'
-            rel='stylesheet'
-          />
-          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

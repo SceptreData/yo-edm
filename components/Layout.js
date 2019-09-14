@@ -1,9 +1,20 @@
-import Header from "./Header";
+import Header from './Header';
 import Head from 'next/head';
-const Layout = ({title, children}) => {
+const Layout = ({ title, children }) => {
   return (
-    <div className="page-layout">
+    <div className='page-layout'>
       <Head>
+        <meta name='keywords' content='Live,Edmonton,Hip Hop' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link
+          href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,500&display=swap'
+          rel='stylesheet'
+        />
+        <link
+          rel='shortcut icon'
+          type='image/x-icon'
+          href='/static/favicon.ico'
+        />
         <title>{title}</title>
       </Head>
       {/* <Header /> */}
@@ -51,8 +62,8 @@ const Layout = ({title, children}) => {
            * MY STYLES HERE
            */
           html {
-            font-family: "Roboto", sans-serif;
-            background: url("/static/img/concert-big.jpg") no-repeat center
+            font-family: 'Roboto', sans-serif;
+            background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
             background-size: cover;
             color: #fff;
@@ -62,7 +73,7 @@ const Layout = ({title, children}) => {
             position: relative;
           }
           h1 {
-            font-family: "Permanent Marker", sans-serif;
+            font-family: 'Permanent Marker', sans-serif;
           }
           p {
             margin-bottom: 1.25em;
@@ -80,7 +91,7 @@ const Layout = ({title, children}) => {
           h4,
           h5 {
             margin: 2.75rem 0 1rem;
-            font-family: "Roboto", sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-weight: 300;
             line-height: 1.15;
           }
@@ -114,6 +125,6 @@ const Layout = ({title, children}) => {
       </style>
     </div>
   );
-}
+};
 
 export default Layout;

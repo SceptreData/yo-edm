@@ -1,55 +1,14 @@
-import Layout from '../components/Layout.js';
 import Link from 'next/link';
-import {useState, useEffect} from 'react'
+import { useState } from 'react';
 
 import fetch from 'isomorphic-unfetch';
 
-function unpackEvent(event) {
-  // if (event !== undefined) {
-  const { name, dates, images, url } = event;
-  const { genre, subgenre } = event.classifications[0];
-  const venue = event._embedded.venues[0];
+import useFetch from '../components/useFetch';
 
-  return { name, dates, images, url, genre, subgenre, venue };
-  // }
-  // return null;
-}
+import Layout from '../components/Layout.js';
+import Events from '../components/Events';
 
-const EventItem = ({ src }) => {
-  const event = unpackEvent(src);
-  return (
-    <li>
-      <h3>{event.name}</h3>
-      <h4>{event.subgenre}</h4>
-      <time className='event-time'>{event.dates.start.localTime}</time>
-      <time className='event-date'>{event.dates.start.localDate}</time>
-      <a href={event.url}>
-        {event.venue.name}
-        <span>→</span>
-      </a>
-      <style jsx>{`
-        time {
-          display: block;
-        }
-        a,
-        a:visited {
-          color: gold;
-          text-decoration: none;
-        }
-
-        span {
-          font-size: 2rem;
-        }
-
-        a:hover {
-          color: goldenrod;
-        }
-      `}</style>
-    </li>
-  );
-};
-
-const Index = ({ events }) => {
+const Home = props => {
   return (
     <Layout title="Yo'Edmonton - The home of Live Edmonton Hip Hop.">
       <h1>Yo'Edmonton</h1>
@@ -57,13 +16,6 @@ const Index = ({ events }) => {
 
       <ul className='upcoming-shows'></ul>
 
-      {/* <section>
-        <ul>
-          {events.map(event => (
-            <EventItem key={event.id} src={event} />
-          ))}
-        </ul> */}
-      {/* </section> */}
       <section>
         <h2>Featured</h2>
         <p>
@@ -73,6 +25,7 @@ const Index = ({ events }) => {
         </p>
       </section>
 
+      <Events />
       <div className='flex-row'>
         <section>
           <h3>Get your Event Listed</h3>
@@ -151,29 +104,17 @@ const Index = ({ events }) => {
   );
 };
 
-const API_STR = `https://app.ticketmaster.com/discovery/v2/events?apikey=${process.env.TMASTER_API_KEY}`;
+// const API_STR = `https://app.ticketmaster.com/discovery/v2/events?apikey=${process.env.TMASTER_API_KEY}`;
 
-const HIPHOP_GENRE_ID = 'KnvZfZ7vAv1';
-const EDMONTON_QUERY = 'locale=*&city=Edmonton&countryCode=CA';
+// const HIPHOP_GENRE_ID = 'KnvZfZ7vAv1';
+// const EDMONTON_QUERY = 'locale=*&city=Edmonton&countryCode=CA';
 
-function keywordSearch(keyword) {
-  const cleanKeyWord = encodeURIComponent(keyword);
-  return `&keyword=${cleanKeyWord}&${EDMONTON_QUERY}`;
-}
+// const SITE_URL = 'https://yo-edmonton.sceptre.now.sh/api/hiphop';
 
-function genreSearch(genre) {
-  return `&classificationId=${genre}&${EDMONTON_QUERY}`;
-}
+// Home.getInitialProps = async ({ req }) => {
+//   const res = await fetch(SITE_URL);
+//   const json = await res.json();
+//   return { events: json._embedded.events };
+// };
 
-Index.getInitialProps = async ({ req }) => {
-  if (req){
-    const res = await fetch(API_STR + genreSearch(HIPHOP_GENRE_ID));
-    const json = await res.json();
-    return { events: json._embedded.events };
-  } else {
-    const res = fetch(API_STR + genreSearch(HIPHOP_GENRE_ID)).then( events => set
-    return {}
-  }
-};
-
-export default Index;
+export default Home;

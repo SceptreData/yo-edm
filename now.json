@@ -1,12 +1,6 @@
 {
-  "alias": ["yoedmonton.com", "www.yoedmonton.com"],
-  "build": {
-    "env": {
-      "TMASTER_API_KEY": "@tmaster_api"
-    }
-  },
   "env": {
     "TMASTER_API_KEY": "@tmaster_api"
   },
-  "public": true,
+  "public": true
 }
