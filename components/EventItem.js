@@ -29,7 +29,13 @@ const EventItem = ({ src }) => {
           border: 1px solid lightgrey;
         }
         .name {
+          width: 400px;
           border-right: 1px solid lightgrey;
+          font-size: 1.563em;
+        }
+        h3 {
+          margin-top: 0.25rem;
+          margin-bottom: 0.25rem;
         }
         time {
           display: block;

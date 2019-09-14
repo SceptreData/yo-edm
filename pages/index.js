@@ -1,12 +1,4 @@
 import Link from 'next/link';
-import { useState } from 'react';
-
-import fetch from 'isomorphic-unfetch';
-
-import useFetch from '../components/useFetch';
-
-import Layout from '../components/Layout.js';
-import Events from '../components/Events';
 
 const Home = props => {
   return (
@@ -31,7 +23,7 @@ const Home = props => {
           <p>
             Are you hosting an event? Let us know! We want to bring fans and
             content-creators together, with the goal of helping you grow your
-            brand as painlessly as possible. YoEdmonton is the best way to let
+            brand as painlessly as possible. Yo'Edmonton is the best way to let
             the people Edmonton know what’s up. Best of all, listing yourself on
             Yo Edmonton is completely free!
           </p>
@@ -45,15 +37,15 @@ const Home = props => {
         <section>
           <h3>About Yo'Edmonton</h3>
           <p>
-            Yo’ Edmonton is the best up and coming Hip Hop and Rap event listing
+            Yo’Edmonton is the best up and coming Hip Hop and Rap event listing
             site in Edmonton. Founded in 2019, the owner was fed up trying to
-            figure out where events were happening in Edmonton. At Yo’ Edmonton,
+            figure out where events were happening in Edmonton. At Yo’Edmonton,
             we are bringing you the latest up-to-date information about shows
             happening around the city.
           </p>
           <p>
-            Yo Edmonton is a promotional platform where artists and fans can
-            promote their favorite artists, merchandise and venues. Yo Edmonton
+            Yo'Edmonton is a promotional platform where artists and fans can
+            promote their favorite artists, merchandise and venues. Yo'Edmonton
             is built for you to engage with the Edmonton hip hop community.
           </p>
         </section>
@@ -102,18 +94,5 @@ const Home = props => {
     </Layout>
   );
 };
-
-// const API_STR = `https://app.ticketmaster.com/discovery/v2/events?apikey=${process.env.TMASTER_API_KEY}`;
-
-// const HIPHOP_GENRE_ID = 'KnvZfZ7vAv1';
-// const EDMONTON_QUERY = 'locale=*&city=Edmonton&countryCode=CA';
-
-// const SITE_URL = 'https://yo-edmonton.sceptre.now.sh/api/hiphop';
-
-// Home.getInitialProps = async ({ req }) => {
-//   const res = await fetch(SITE_URL);
-//   const json = await res.json();
-//   return { events: json._embedded.events };
-// };
 
 export default Home;
