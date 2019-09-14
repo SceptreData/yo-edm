@@ -25,7 +25,11 @@ const EventItem = ({ src }) => {
       <style jsx>{`
         li {
           display: flex;
-          justify-content: space-between;
+          align-items: center;
+          border: 1px solid lightgrey;
+        }
+        .name {
+          border-right: 1px solid lightgrey;
         }
         time {
           display: block;
