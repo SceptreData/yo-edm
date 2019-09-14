@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import Layout from '../components/Layout';
+import Events from '../components/Events';
+
 const Home = props => {
   return (
     <Layout title="Yo'Edmonton - The home of Live Edmonton Hip Hop.">
