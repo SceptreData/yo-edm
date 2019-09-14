@@ -1,60 +1,18 @@
 import useFetch from './useFetch';
 import LoadingBars from './LoadingBars';
-
-function unpackEvent(event) {
-  // if (event !== undefined) {
-  const { name, dates, images, url } = event;
-  const { genre, subgenre } = event.classifications[0];
-  const venue = event._embedded.venues[0];
-
-  return { name, dates, images, url, genre, subgenre, venue };
-  // }
-  // return null;
-}
-
-const EventItem = ({ src }) => {
-  const event = unpackEvent(src);
-  return (
-    <li>
-      <h3>{event.name}</h3>
-      <h4>{event.subgenre}</h4>
-      <time className='event-time'>{event.dates.start.localTime}</time>
-      <time className='event-date'>{event.dates.start.localDate}</time>
-      <a href={event.url}>
-        {event.venue.name}
-        <span>→</span>
-      </a>
-      <style jsx>{`
-        time {
-          display: block;
-        }
-        a,
-        a:visited {
-          color: gold;
-          text-decoration: none;
-        }
-
-        span {
-          font-size: 2rem;
-        }
-
-        a:hover {
-          color: goldenrod;
-        }
-      `}</style>
-    </li>
-  );
-};
+import EventItem from './EventItem';
 
 const Events = () => {
   const res = useFetch('https://yoedmonton.com/api/hiphop', {});
   // const res = useFetch('https://yo-edmonton.sceptre.now.sh/api/hiphop', {});
   // const res = useFetch('https://localhost:3000/api/hiphop', {});
 
+  // show a loading animation if results haven't arrived yet.
   if (!res.response) {
     return <LoadingBars />;
   }
 
+  // Display our list of events.
   const events = res.response._embedded.events;
   return (
     <section className='root'>
