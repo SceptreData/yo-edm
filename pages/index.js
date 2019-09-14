@@ -14,8 +14,6 @@ const Home = props => {
       <h1>Yo'Edmonton</h1>
       <p>Live Edmonton Hip Hop</p>
 
-      <ul className='upcoming-shows'></ul>
-
       <section>
         <h2>Featured</h2>
         <p>
@@ -26,6 +24,7 @@ const Home = props => {
       </section>
 
       <Events />
+
       <div className='flex-row'>
         <section>
           <h3>Get your Event Listed</h3>

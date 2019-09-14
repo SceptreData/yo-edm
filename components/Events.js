@@ -47,7 +47,8 @@ const EventItem = ({ src }) => {
 };
 
 const Events = () => {
-  const res = useFetch('https://yo-edmonton.sceptre.now.sh/api/hiphop', {});
+  const res = useFetch('https://yoedmonton.com/api/hiphop', {});
+  // const res = useFetch('https://yo-edmonton.sceptre.now.sh/api/hiphop', {});
   // const res = useFetch('https://localhost:3000/api/hiphop', {});
 
   if (!res.response) {
