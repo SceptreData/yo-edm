@@ -1,5 +1,5 @@
 const LoadingBars = () => (
-  <>
+  <section className='root'>
     <div className='spinner'>
       <div className='rect1'></div>
       <div className='rect2'></div>
@@ -8,6 +8,14 @@ const LoadingBars = () => (
       <div className='rect5'></div>
     </div>
     <style jsx>{`
+      .root {
+        padding: 20px;
+        border: 1px solid lightgrey;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+      }
       .spinner {
         margin: 100px auto;
         width: 50px;
@@ -70,7 +78,7 @@ const LoadingBars = () => (
         }
       }
     `}</style>
-  </>
+  </section>
 );
 
 export default LoadingBars;

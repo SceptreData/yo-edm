@@ -52,21 +52,7 @@ const Events = () => {
   // const res = useFetch('https://localhost:3000/api/hiphop', {});
 
   if (!res.response) {
-    return (
-      <section className='root'>
-        <LoadingBars />
-        <style jsx>{`
-          .root {
-            padding: 20px;
-            border: 1px solid lightgrey;
-            backdrop-filter: blur(4px);
-            background: rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
-            margin-right: 1rem;
-          }
-        `}</style>
-      </section>
-    );
+    return <LoadingBars />;
   }
 
   const events = res.response._embedded.events;
