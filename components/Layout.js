@@ -90,7 +90,7 @@ const Layout = ({ title, children }) => {
           h3,
           h4,
           h5 {
-            margin: 2.75rem 0 1rem;
+            margin: 0rem 0 1rem;
             font-family: 'Roboto', sans-serif;
             font-weight: 300;
             line-height: 1.15;

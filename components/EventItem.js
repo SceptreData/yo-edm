@@ -26,7 +26,7 @@ const EventItem = ({ src }) => {
         li {
           display: flex;
           align-items: center;
-          border: 1px solid lightgrey;
+          border-bottom: 1px solid lightgrey;
         }
         .name {
           width: 400px;

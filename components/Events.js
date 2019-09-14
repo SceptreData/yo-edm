@@ -16,6 +16,7 @@ const Events = () => {
   const events = res.response._embedded.events;
   return (
     <section className='root'>
+      <h2>Events</h2>
       <ul>
         {events.map(event => (
           <li>
