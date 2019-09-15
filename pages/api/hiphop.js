@@ -1,3 +1,4 @@
+import Cors from 'micro-cors';
 import fetch from 'isomorphic-unfetch';
 
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events?';
@@ -19,8 +20,12 @@ function getEvents() {
   return fetch(BASE_URL + API_STR + HIP_HOP_SEARCH);
 }
 
-export default async function fetchEvents(req, res) {
+const cors = Cors({});
+
+async function fetchEvents(req, res) {
   const events = await getEvents();
   const json = await events.json();
   res.send(json);
 }
+
+export default cors(fetchEvents);
