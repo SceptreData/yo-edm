@@ -14,16 +14,19 @@ const EventItem = ({ src }) => {
         <h3>{event.name}</h3>
         <h4>{event.subGenre.name}</h4>
       </div>
+
       <div className='event-details'>
         <div>
-          <time className='event-time'>{event.dates.start.localTime}</time>
           <time className='event-date'>{event.dates.start.localDate}</time>
+          <time className='event-time'>{event.dates.start.localTime}</time>
         </div>
+
         <a className='venue-link' href={event.url} title={event.venue.name}>
           {event.venue.name}
           <span>→</span>
         </a>
       </div>
+
       <style jsx>{`
         li {
           display: flex;

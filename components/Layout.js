@@ -7,7 +7,7 @@ const Layout = ({ title, children }) => {
         <meta name='keywords' content='Live,Edmonton,Hip Hop' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link
-          href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,500&display=swap'
+          href='https://fonts.googleapis.com/css?family=Permanent+Marker|Montserrat:300,700&display=swap'
           rel='stylesheet'
         />
         <link
@@ -62,7 +62,7 @@ const Layout = ({ title, children }) => {
            * MY STYLES HERE
            */
           html {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
             background-size: cover;
@@ -78,6 +78,8 @@ const Layout = ({ title, children }) => {
           p {
             margin-bottom: 1.25em;
             font-weight: 300;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
           }
 
           main {
@@ -91,8 +93,8 @@ const Layout = ({ title, children }) => {
           h4,
           h5 {
             margin: 0rem 0 1rem;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             line-height: 1.15;
           }
 
@@ -110,6 +112,7 @@ const Layout = ({ title, children }) => {
           }
 
           h4 {
+            font-weight: 400;
             font-size: 1.563em;
           }
 
