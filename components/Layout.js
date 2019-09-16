@@ -62,7 +62,8 @@ const Layout = ({ title, children }) => {
            * MY STYLES HERE
            */
           html {
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              Ubuntu, sans-serif;
             background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
             background-size: cover;
@@ -77,7 +78,7 @@ const Layout = ({ title, children }) => {
           }
           p {
             margin-bottom: 1.25em;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 0.5px;
             line-height: 1.4;
           }
@@ -93,7 +94,9 @@ const Layout = ({ title, children }) => {
           h4,
           h5 {
             margin: 0rem 0 1rem;
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+              Ubuntu, sans-serif;
+
             font-weight: 700;
             line-height: 1.15;
           }
