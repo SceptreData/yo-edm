@@ -70,9 +70,12 @@ const Layout = ({ title, children }) => {
             height: auto;
           }
 
-          /*
-           * MY STYLES HERE
-           */
+          /* * * * * * * * * * * *
+           *                     *
+           *   MY STYLES HERE    *
+           *                     *
+           * * * * * * * * * * * */
+
           html {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
               Ubuntu, sans-serif;
