@@ -6,6 +6,10 @@ const Layout = ({ title, children }) => {
       <Head>
         <meta name='keywords' content='Live,Edmonton,Hip Hop' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta
+          name='description'
+          content="Yo'Edmonton is the best place to find upcoming live hip hop shows in Edmonton."
+        />
         <link
           href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,600&display=swap'
           rel='stylesheet'
