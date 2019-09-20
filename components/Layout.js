@@ -1,6 +1,18 @@
+import {useEffect} from 'react';
+
 import Header from './Header';
 import Head from 'next/head';
+import {initGA, logPageView} from './Analytics';
+
 const Layout = ({ title, children }) => {
+  // React Hook for using google Analytics.
+  useEffect(()=>{
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, []);
   return (
     <div className='page-layout'>
       <Head>
@@ -62,9 +74,12 @@ const Layout = ({ title, children }) => {
             height: auto;
           }
 
-          /*
-           * MY STYLES HERE
-           */
+          /* * * * * * * * * * * *
+           *                     *
+           *   MY STYLES HERE    *
+           *                     *
+           * * * * * * * * * * * */
+
           html {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
               Ubuntu, sans-serif;
