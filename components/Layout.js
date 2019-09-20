@@ -17,6 +17,7 @@ const Layout = ({ title, children }) => {
     <div className='page-layout'>
       <Head>
         <meta name='keywords' content='Live,Edmonton,Hip Hop' />
+        <meta name='description' content="Yo'Edmonton is the place to find live hip hop in , local to" />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link
           href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300,600&display=swap'
