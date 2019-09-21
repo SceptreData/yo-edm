@@ -1,18 +1,20 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 import Header from './Header';
 import Head from 'next/head';
-import {initGA, logPageView} from './Analytics';
+import { initGA, logPageView } from './Analytics';
 
 const Layout = ({ title, children }) => {
-  // React Hook for using google Analytics.
-  useEffect(()=>{
+  // React Hook to boot google Analytics.
+  useEffect(() => {
     if (!window.GA_INITIALIZED) {
       initGA();
       window.GA_INITIALIZED = true;
     }
     logPageView();
   }, []);
+
+  // Render Logic
   return (
     <div className='page-layout'>
       <Head>
@@ -35,6 +37,10 @@ const Layout = ({ title, children }) => {
       </Head>
       {/* <Header /> */}
       <main>{children}</main>
+
+      {/* ********
+          Global Styles
+          ******** */}
       <style jsx global>
         {`
           /* RESET */
