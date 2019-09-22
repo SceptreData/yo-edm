@@ -16,7 +16,7 @@ function genreSearch(genre) {
   return `&classificationId=${genre}&${EDMONTON_QUERY}`;
 }
 
-function getEvents() {
+async function getEvents() {
   return fetch(BASE_URL + API_STR + HIP_HOP_SEARCH);
 }
 
@@ -25,7 +25,7 @@ const cors = Cors({});
 async function fetchEvents(req, res) {
   const events = await getEvents();
   const json = await events.json();
-  res.send(json);
+  res.status(200).send(json);
 }
 
 export default cors(fetchEvents);

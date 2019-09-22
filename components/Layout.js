@@ -87,7 +87,7 @@ const Layout = ({ title, children }) => {
            * * * * * * * * * * * */
 
           html {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+            font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
               Ubuntu, sans-serif;
             background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
@@ -119,8 +119,8 @@ const Layout = ({ title, children }) => {
           h4,
           h5 {
             margin: 0rem 0 1rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              Ubuntu, sans-serif;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              'Ubuntu', sans-serif;
 
             font-weight: 700;
             line-height: 1.15;
