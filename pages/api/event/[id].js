@@ -13,11 +13,9 @@ async function fetchEvent(req, res) {
   const {
     query: { id }
   } = req;
-  console.log('QUERY_ID: ' + id);
   const event = await getEvent(id);
-  console.log('EVENT OBJ: ' + event);
   const json = await event.json();
-  console.log(event);
+
   res.status(200).send(json);
 }
 

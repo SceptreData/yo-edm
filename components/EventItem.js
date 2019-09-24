@@ -26,8 +26,6 @@ const EventItem = ({ src }) => {
           <time className='event-time'>{event.dates.start.localTime}</time>
         </div>
 
-        {/* <EventLink event={event} /> */}
-
         <a className='venue-link' href={event.url} title={event.venue.name}>
           {event.venue.name}
           <span>→</span>
