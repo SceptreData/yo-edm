@@ -1,6 +1,7 @@
 {
   "env": {
-    "TMASTER_API_KEY": "@tmaster_api"
+    "TMASTER_API_KEY": "@tmaster_api",
+    "EB_API_KEY": "@eb_api_key"
   },
   "public": true
 }
