@@ -1,6 +1,9 @@
 import Cors from 'micro-cors';
 import fetch from 'isomorphic-unfetch';
 
+const MUSIC_CATEGORY = 103;
+const HIP_HOP_SUBCAT = 3008;
+
 // Lookup TicketFly
 const TM_BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events?';
 const TM_API_STR = `apikey=${process.env.TMASTER_API_KEY}`;
@@ -26,7 +29,7 @@ function genreSearch(genre) {
 }
 
 async function getEvents() {
-  return fetch(TM_BASE_URL + TM_API_STR + HIP_HOP_SEARCH);
+  return fetch(TM_BASE_URL + TM_API_STR + TM_HIP_HOP_SEARCH);
 }
 
 const cors = Cors({});
