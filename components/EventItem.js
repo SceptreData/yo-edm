@@ -1,18 +1,23 @@
+import Link from 'next/link';
+
 function unpackEvent(event) {
-  const { name, dates, images, url } = event;
+  const { id, name, dates, images, url } = event;
   const { genre, subGenre } = event.classifications[0];
   const venue = event._embedded.venues[0];
 
-  return { name, dates, images, url, genre, subGenre, venue };
+  return { id, name, dates, images, url, genre, subGenre, venue };
 }
-
 const EventItem = ({ src }) => {
   const event = unpackEvent(src);
   return (
     <li>
       <div className='name'>
-        <h3>{event.name}</h3>
-        <h4>{event.subGenre.name}</h4>
+        <Link href='/event/[id]' as={`/event/${event.id}`}>
+          <a>
+            <h3>{`${event.name}`}</h3>
+            <h4>{event.subGenre.name}</h4>
+          </a>
+        </Link>
       </div>
 
       <div className='event-details'>
@@ -37,7 +42,7 @@ const EventItem = ({ src }) => {
         }
 
         li:hover {
-          background: rgb(255, 255, 255, 0.15);
+          background: rgb(104, 118, 129, 0.5);
         }
         .name {
           width: 400px;
@@ -65,6 +70,16 @@ const EventItem = ({ src }) => {
 
         a:hover {
           color: goldenrod;
+        }
+
+        .name a,
+        .name a:visited {
+          color: white;
+          transition: color 0.2s ease-out;
+        }
+
+        .name a:hover {
+          color: gold;
         }
 
         span {

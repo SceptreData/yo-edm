@@ -1,18 +1,20 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 import Header from './Header';
 import Head from 'next/head';
-import {initGA, logPageView} from './Analytics';
+import { initGA, logPageView } from './Analytics';
 
 const Layout = ({ title, children }) => {
-  // React Hook for using google Analytics.
-  useEffect(()=>{
+  // React Hook to boot google Analytics.
+  useEffect(() => {
     if (!window.GA_INITIALIZED) {
       initGA();
       window.GA_INITIALIZED = true;
     }
     logPageView();
   }, []);
+
+  // Render Logic
   return (
     <div className='page-layout'>
       <Head>
@@ -36,6 +38,10 @@ const Layout = ({ title, children }) => {
       </Head>
       {/* <Header /> */}
       <main>{children}</main>
+
+      {/* ********
+          Global Styles
+          ******** */}
       <style jsx global>
         {`
           /* RESET */
@@ -82,7 +88,7 @@ const Layout = ({ title, children }) => {
            * * * * * * * * * * * */
 
           html {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+            font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
               Ubuntu, sans-serif;
             background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
@@ -114,8 +120,8 @@ const Layout = ({ title, children }) => {
           h4,
           h5 {
             margin: 0rem 0 1rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-              Ubuntu, sans-serif;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              'Ubuntu', sans-serif;
 
             font-weight: 700;
             line-height: 1.15;
