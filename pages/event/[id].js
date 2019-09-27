@@ -177,8 +177,8 @@ const Event = ({ event }) => {
 Event.getInitialProps = async function(context) {
   const { id } = context.query;
 
-  // const res = await fetch(`https://yoedmonton.com/api/event/${id}`);
-  const res = await fetch(`https://yo-edmonton.sceptre.now.sh/api/event/${id}`);
+  const res = await fetch(`https://yoedmonton.com/api/event/${id}`);
+  // const res = await fetch(`https://yo-edmonton.sceptre.now.sh/api/event/${id}`);
   const event = await res.json();
 
   return { event };

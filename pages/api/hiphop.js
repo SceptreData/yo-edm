@@ -16,7 +16,7 @@ const EB_HIPHOP_SEARCH =
   '?q=hip+hop&sort_by=date&location.address=Edmonton&categories=103&include_adult_events=on';
 const urls = [
   // TICKETMASTER
-  TM_BASE_URL + TM_API_STR + HIP_HOP_SEARCH
+  // TM_BASE_URL + TM_API_STR + HIP_HOP_SEARCH
   //EVENTBRITE
 ];
 function keywordSearch(keyword) {
