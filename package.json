@@ -20,7 +20,7 @@
     "dev": "yarn prebuild && next dev",
     "prebuild": "node makeSitemap.js",
     "build": "yarn prebuild & next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "eslintConfig": {
     "extends": "react-app"
