@@ -2,10 +2,8 @@ import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
 import Layout from '../../components/Layout';
+import { area } from '../../components/util';
 
-function area(img) {
-  return img.height * img.width;
-}
 function getBestImage(imgFormat, images) {
   return images
     .filter(img => img.ratio == imgFormat)
@@ -16,11 +14,13 @@ function getBestImage(imgFormat, images) {
       { width: 0, height: 0 }
     );
 }
+
 function getDescription(event) {
   if (event.description) return event.description;
   if (event.info) return event.info;
-  return 'This Artist has not provided a description for this event. It will probably be awesome!';
+  return 'The Artist has not provided a description for this event.';
 }
+
 const Event = ({ event }) => {
   const wideImg = getBestImage('16_9', event.images);
   const squareImg = getBestImage('4_3', event.images);
@@ -57,7 +57,7 @@ const Event = ({ event }) => {
               <time className='event-date'>{event.dates.start.localDate}</time>
               <time className='event-time'>{event.dates.start.localTime}</time>
             </div>
-            <a className='buy-btn' href={venue.url}>
+            <a className='buy-btn' href={venue.url || event.url}>
               Buy Tickets
             </a>
             <span>

@@ -19,7 +19,10 @@ const Layout = ({ title, children }) => {
     <div className='page-layout'>
       <Head>
         <meta name='keywords' content='Live,Edmonton,Hip Hop' />
-        <meta name='description' content="Yo'Edmonton is the place to find live hip hop in , local to" />
+        <meta
+          name='description'
+          content="Yo'Edmonton is the place to find live hip hop in , local to"
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
@@ -90,11 +93,12 @@ const Layout = ({ title, children }) => {
           html {
             font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
               Ubuntu, sans-serif;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: relative;
             background: url('/static/img/concert-big.jpg') no-repeat center
               center fixed;
             background-size: cover;
-            color: #fff;
-            background-color: rgba(255, 255, 255, 0.5);
           }
           body {
             position: relative;

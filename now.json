@@ -1,7 +1,14 @@
 {
+  "version": 2,
   "env": {
     "TMASTER_API_KEY": "@tmaster_api",
     "EB_API_KEY": "@eb_api_key"
   },
-  "public": true
+  "routes": [
+    {
+      "src": "/sitemap.xml",
+      "status": 301,
+      "headers": { "Location": "api/sitemap" }
+    }
+  ]
 }
