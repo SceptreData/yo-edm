@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-import Header from './Header';
 import Head from 'next/head';
 import { initGA, logPageView } from './Analytics';
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = ({ title, children }) => {
   // React Hook to boot google Analytics.
@@ -39,8 +40,9 @@ const Layout = ({ title, children }) => {
         />
         <title>{title}</title>
       </Head>
-      {/* <Header /> */}
+      <Header />
       <main>{children}</main>
+      <Footer />
 
       {/* ********
           Global Styles

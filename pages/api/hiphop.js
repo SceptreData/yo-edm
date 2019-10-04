@@ -37,6 +37,7 @@ const cors = Cors({});
 async function fetchEvents(req, res) {
   const events = await getEvents();
   const json = await events.json();
+  res.setHeader('Cache-Control', 's-maxage=1200, max-age=0');
   res.status(200).send(json);
 }
 

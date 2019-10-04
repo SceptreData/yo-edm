@@ -11,8 +11,9 @@ const getEventURLS = eventData => {
   const { events } = eventData._embedded;
   return events.map(event => `/event/${event.id}`);
 };
+
+//  Function to build our sitemap, including dynamic links.
 async function getSitemap(req, res) {
-  // Grab our static sitemap urls
   const { url: rawStaticUrls } = staticSitemap.urlset;
   const staticUrls = rawStaticUrls.map(url => {
     return { url: url.loc, lastmod: url.lastmod, priority: url.priority };
@@ -31,10 +32,6 @@ async function getSitemap(req, res) {
   dynamicUrls.map(url =>
     sitemap.add({ url: url, lastmod: Date.now(), priority: 0.6 })
   );
-
-  // for (let url of staticUrls) {
-  //   sm.add({ url: url.loc, lastmod: url.lastmod, priority: url.priority });
-  // }
 
   res.setHeader('Content-Type', 'application/xml');
   res.status(200).send(sitemap.toString());

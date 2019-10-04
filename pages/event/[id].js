@@ -57,12 +57,14 @@ const Event = ({ event }) => {
               <time className='event-date'>{event.dates.start.localDate}</time>
               <time className='event-time'>{event.dates.start.localTime}</time>
             </div>
-            <a className='buy-btn' href={venue.url || event.url}>
-              Buy Tickets
-            </a>
-            <span>
-              {priceRanges && `$${Number(priceRanges[0].min).toFixed(2)}`}
-            </span>
+            <div>
+              <a className='buy-btn' href={venue.url || event.url}>
+                Buy Tickets
+              </a>
+              <span>
+                {priceRanges && `$${Number(priceRanges[0].min).toFixed(2)}`}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -161,12 +163,12 @@ const Event = ({ event }) => {
             justify-content: space-between;
           }
           .event-details {
-            width: 49%;
+            width: 35%;
             margin-bottom: 0;
           }
 
           .event-description {
-            width: 49%;
+            width: 60%;
           }
         }
       `}</style>

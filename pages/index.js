@@ -1,34 +1,25 @@
 import Link from 'next/link';
 
 import Layout from '../components/Layout';
+import Featured from '../components/Featured';
 import Events from '../components/Events';
 
 const Home = props => {
   return (
     <Layout title="Yo'Edmonton - The home of Live Edmonton Hip Hop.">
-      <h1>Yo'Edmonton</h1>
-      <p>Live Edmonton Hip Hop</p>
-
-      <section>
-        <h2>Featured</h2>
-        <p>
-          Discount Lion Safari is a hip hop duo featuring the eloquent Fawkes
-          and groove magician Burgerfinger. This edmonton born and raised duo
-          has been bringing crowds to their knees since 2017.
-        </p>
-      </section>
-
+      <Featured />
       <Events />
 
       <div className='flex-row'>
         <section>
           <h3>Get your Event Listed</h3>
           <p>
-            Are you hosting an event? Let us know! We want to bring fans and
-            content-creators together, with the goal of helping you grow your
-            brand as painlessly as possible. Yo'Edmonton is the best way to let
-            the people Edmonton know what’s up. Best of all, listing yourself on
-            Yo Edmonton is completely free!
+            Are you hosting an event?
+            <a href='mailto:yoedmonton@gmail.com'> Let us know!</a> We want to
+            bring fans and content-creators together, with the goal of helping
+            you grow your brand as painlessly as possible. Yo'Edmonton is the
+            best way to let the people Edmonton know what’s up. Best of all,
+            listing yourself on Yo Edmonton is completely free!
           </p>
           <p>
             Do you have pictures of an event? We would love to see them. Your
@@ -92,6 +83,13 @@ const Home = props => {
 
         a:hover {
           opacity: 0.6;
+        }
+        p a,
+        p a:visited {
+          color: gold;
+        }
+        p a:hover {
+          color: goldenrod;
         }
       `}</style>
     </Layout>
