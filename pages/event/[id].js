@@ -37,7 +37,7 @@ const Event = ({ event }) => {
   const description = getDescription(event);
 
   return (
-    <Layout className='event-layout' title={event.name}>
+    <Layout className='event-layout' title={`${event.name} @ ${venue.name}`}>
       <div className='img-container'>
         <picture>
           <source srcSet={wideImg.url} media='(min-width: 400px)' />
