@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
   return (
     <footer className='site-footer'>
@@ -14,9 +16,9 @@ const Footer = () => {
         <nav>
           <ul>
             <li>
-              <a href='/' title='Home'>
-                HOME
-              </a>
+              <Link href='/'>
+                <a title='Home'>HOME</a>
+              </Link>
             </li>
             <li>
               <a href='/partners' title='Partners'>
@@ -36,7 +38,6 @@ const Footer = () => {
           background-color: rgba(0, 0, 0, 0.7);
           backdrop-filter: blur(4px);
           padding-bottom: 1rem;
-          margin-bottom: 3rem;
           width: 100%;
         }
         .fit-content {
