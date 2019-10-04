@@ -10,7 +10,14 @@ const Partners = () => {
             <a href='http://www.bertabeer.ca'>Alberta Craft Beer</a>
           </li>
           <li>
-            <a href='#'>Davis' Animation Website</a>
+            <a href='http://mangeles8.dmitstudent.ca/Edmonton_Barber_Essentials'>
+              Edmonton Barber Essentials
+            </a>
+          </li>
+          <li>
+            <a href='http://dclifford3.dmitstudent.ca/rubber-hose-cartoon-aesthetic/'>
+              Rubber Hose Aesthetic
+            </a>
           </li>
         </ul>
       </section>
