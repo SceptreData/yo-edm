@@ -60,7 +60,7 @@ const Featured = () => {
         @media (min-width: 720px) {
           div {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
           }
 
