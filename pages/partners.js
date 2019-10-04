@@ -7,7 +7,7 @@ const Partners = () => {
         <h1>Partners</h1>
         <ul>
           <li>
-            <a href='#'>Alberta Craft Beer</a>
+            <a href='http://www.bertabeer.ca'>Alberta Craft Beer</a>
           </li>
           <li>
             <a href='#'>Davis' Animation Website</a>
@@ -22,6 +22,14 @@ const Partners = () => {
           background: rgba(0, 0, 0, 0.5);
           margin-bottom: 2rem;
           margin-right: 1rem;
+        }
+        a,
+        a:visited {
+          color: white;
+          text-decoration: none;
+        }
+        a:hover {
+          color: gold;
         }
       `}</style>
     </Layout>

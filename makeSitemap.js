@@ -1,7 +1,6 @@
 const sitemap = require('nextjs-sitemap-generator');
 
 sitemap({
-  // baseUrl: 'http://localhost:3000/',
   baseUrl: 'https://www.yoedmonton.com',
   ignoredPaths: ['admin', 'api', 'event'],
   pagesDirectory: __dirname + '/pages',
