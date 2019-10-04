@@ -119,6 +119,7 @@ const Layout = ({ title, children }) => {
             position: relative;
             max-width: 960px;
             margin: 0 auto;
+            min-height: 70vh;
           }
 
           h2,
