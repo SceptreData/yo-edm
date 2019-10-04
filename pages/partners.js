@@ -9,6 +9,9 @@ const Partners = () => {
           <li>
             <a href='#'>Alberta Craft Beer</a>
           </li>
+          <li>
+            <a href='#'>Davis' Animation Website</a>
+          </li>
         </ul>
       </section>
       <style jsx>{`
